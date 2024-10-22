@@ -1,0 +1,35 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "controltower:GetControlOperation",
+                "controltower:GetEnabledControl",
+                "controltower:ListControlOperations",
+                "controltower:ListEnabledControls",
+                "controltower:EnableControl",
+                "controltower:DisableControl",
+                "controltower:GetEnabledControl",
+                "controltower:UpdateEnabledControl"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "organizations:DescribeOrganization",
+                "organizations:ListRoots",
+                "organizations:ListOrganizationalUnitsForParent",
+                "organizations:ListAccounts",
+                "organizations:ListAccountsForParent",
+                "organizations:DescribeOrganizationalUnit",
+                "organizations:DescribeAccount",
+                "organizations:ListPolicies",
+                "organizations:ListPoliciesForTarget",
+                "organizations:DescribePolicy"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
