@@ -1,0 +1,81 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Control Tower Policies API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/controltower-policies": {
+            "post": {
+                "summary": "Bulk Enable/Disable Control Tower Policies",
+                "description": "Bulk Enable/Disable Control Tower Policies for multiple Regions and OUs",
+                "operationId": "controlpolicies",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "region": {
+                                        "type": "string"
+				                            },
+				                    "controlidentifer": {
+                                        "type": "string"
+				                            },
+                                    "ou_path": {
+                                        "type": "string"
+                                    },
+                                    "operation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "region",
+                                    "controlidentifer",
+                                    "ou_path",
+                                    "operation"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated policies",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "results": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

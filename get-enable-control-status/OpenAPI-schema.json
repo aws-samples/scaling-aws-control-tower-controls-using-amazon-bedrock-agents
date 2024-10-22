@@ -1,0 +1,76 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Control Tower API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/controltower-policies": {
+            "post": {
+                "summary": "Get Enabled Control Status/Information",
+                "description": "To get the status of Enabled Control",
+                "operationId": "controlpolicies",
+                "tags": [
+                    "Control Tower Controls"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "enabled_control_arn": {
+                                        "type": "string"
+				                            },
+				                            "region": {
+                                        "type": "string"
+				                            }
+                                },
+                                "required": [
+                                    "enabled_control_arn",
+                                    "region"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Enabled Control Tower Controls information",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "results": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
