@@ -1,4 +1,4 @@
-# Scaling AWS Control Tower controls with Amazon Bedrock Agents
+# Scaling AWS Control Tower controls using Amazon Bedrock Agents
 
 ---
 
